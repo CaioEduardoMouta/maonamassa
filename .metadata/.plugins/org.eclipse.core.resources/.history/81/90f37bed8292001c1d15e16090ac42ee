@@ -1,0 +1,6 @@
+package br.com.devdojo.examgenerator.endpoint.v1;
+
+@RestControllet
+public class ProfessorEndpoint {
+
+}
