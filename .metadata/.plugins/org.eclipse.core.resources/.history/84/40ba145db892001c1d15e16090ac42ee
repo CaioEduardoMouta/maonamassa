@@ -1,0 +1,6 @@
+package br.com.devdojo.examgenerator.security.filter;
+
+public class Constants {
+	public static final String SECRET = "secret";
+
+}

@@ -1,0 +1,34 @@
+package br.com.devdojo.examgenerator.security.filter;
+
+import java.io.IOException;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+
+import br.com.devdojo.examgenerator.persistence.model.ApplicationUser;
+
+
+public class JWTAuthorizationFilter extends UsernamePasswordAuthenticationFilter {
+	private AuthenticationManager authenticationManager;
+	
+	public JWTAuthorizationFilter(AuthenticationManager authenticationManager) {
+		this.authenticationManager = AuthenticationManager;
+	}
+	
+	@Override
+	public Authentication attempAuthentication (HttpServletRequest request, HttpServletResponse response) throws  {
+		try {
+			ApplicationUser user = new ObjectMapper().readValue(request.getInputStream(),ApplicationUser.class);
+			return authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(user.getUsername(),))
+		}catch (IOException e) {
+			
+		}
+		return super.attemptAuthentication(request, response);
+	}
+	
+}

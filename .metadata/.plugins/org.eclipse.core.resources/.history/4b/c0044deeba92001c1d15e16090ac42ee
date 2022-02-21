@@ -1,0 +1,16 @@
+package br.com.devdojo.examgenerator.security.filter;
+
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+
+import com.mysql.cj.callback.UsernameCallback;
+
+public class JWATAuthorizationFilter extends UsernamePasswordAuthenticationFilter {
+	private AuthenticationManager authenticationManager;
+	
+	public JWTAuthenticationFilter(AuthenticationManager authenticationManager) {
+		this.authenticationManager = AuthenticationManager;
+	}
+	
+	@Override
+}
