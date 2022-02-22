@@ -23,19 +23,6 @@ public class JWTAuthorizationFilter extends UsernamePasswordAuthenticationFilter
 		this.authenticationManager = authenticationManager;
 	}
 	
-	@Override
-	public Authentication attempAuthentication(HttpServletRequest request, HttpServletResponse response) throws AuthenticationException  {
-		try {
-			ApplicationUser user = new ObjectMapper().readValue(request.getInputStream(),ApplicationUser.class);
-			return authenticationManager
-					.authenticate(new UsernamePasswordAuthenticationToken(user.getUsername(), user.getPassword()));
-		}catch (IOException e) {
-			throw new RuntimeException(e);
-		}
-		
-	}
-	
-	@Override
-	protected void successfulAuthentication(HttpServletRequest request, HttpServletResponse response, finalF )
+
 	
 }
