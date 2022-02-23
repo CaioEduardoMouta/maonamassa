@@ -25,6 +25,8 @@ import br.com.devdojo.examgenerator.persistence.model.ApplicationUser;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 
+import static br.com.devdojo.examgenerator.security.filter.Constants.*;
+
 public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilter {
 
 	private AuthenticationManager authenticationManager;
@@ -55,6 +57,14 @@ public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilte
 				.setExpiration(Date.from(expTimeUTC.toInstant()))
 				.signWith(SignatureAlgorithm.HS256, SECRET)
 				.compact();
-		String tokenJson = "{}";
+		String tokenJson =
+		"{\"token\":" + addQuotes(TOKEN_PREFIX + token) + ",\"exp\":"+addQuotes(expTimeUTC.toString())+ "}";
+		response.getWriter().write(tokenJson);
+		response.addHeader("Content-Type", "application/json;charset=UTF-8");
+		response.addHeader(HEADER_STRING, TOKEN_PREFIX+token);
+	}
+	
+	private String addQuotes(String value) {
+		return new StringBuilder(300).append("\"").append(value).append("\"").toString();
 	}
 }

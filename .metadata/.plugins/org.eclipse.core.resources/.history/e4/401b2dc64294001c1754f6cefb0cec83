@@ -1,0 +1,41 @@
+package br.com.devdojo.examgenerator.security.filter;
+
+import java.io.IOException;
+
+import javax.servlet.FilterChain;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.AuthenticationException;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.security.web.authentication.www.BasicAuthenticationFilter;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import br.com.devdojo.examgenerator.persistence.model.ApplicationUser;
+import br.com.devdojo.examgenerator.security.service.CustomUserDetailsService;
+
+
+public class JWTAuthorizationFilter extends BasicAuthenticationFilter {
+ private final CustomUserDetailsService customUserDetailsService;
+
+public JWTAuthorizationFilter(AuthenticationManager authenticationManager,
+		CustomUserDetailsService customUserDetailsService) {
+	super(authenticationManager);
+	this.customUserDetailsService = customUserDetailsService;
+}
+ 
+ @Override
+	protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain chain)
+			throws IOException, ServletException {
+		// TODO Auto-generated method stub
+		super.doFilterInternal(request, response, chain);
+	}
+	
+
+	
+}

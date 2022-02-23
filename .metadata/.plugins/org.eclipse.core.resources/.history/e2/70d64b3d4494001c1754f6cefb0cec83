@@ -1,0 +1,47 @@
+package br.com.devdojo.examgenerator.security.filter;
+
+import java.io.IOException;
+
+import javax.servlet.FilterChain;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.web.authentication.www.BasicAuthenticationFilter;
+
+
+import br.com.devdojo.examgenerator.security.service.CustomUserDetailsService;
+import br.com.devdojo.examgenerator.security.filter.Constants;
+
+
+public class JWTAuthorizationFilter extends BasicAuthenticationFilter {
+ private final CustomUserDetailsService customUserDetailsService;
+
+public JWTAuthorizationFilter(AuthenticationManager authenticationManager,
+		CustomUserDetailsService customUserDetailsService) {
+	super(authenticationManager);
+	this.customUserDetailsService = customUserDetailsService;
+}
+ 
+ @Override
+	protected void doFilterInternal(HttpServletRequest request,
+			HttpServletResponse response,
+			FilterChain chain)
+			throws IOException, ServletException {
+		// TODO Auto-generated method stub
+	 String header = request.getHeader(HEADER_STRING)
+	 if(header == null || !header.startsWith(TOKEN_PREFIX)) {
+		 chain.doFilter(request, response);
+		 return;
+	 }
+	 
+	}
+	private UsernamePasswordAuthenticationToken geAuthenticationToken(HttpServletRequest request) {
+		String token = request.getHeader(HEADER_STRING);
+		if(token == null)
+	}
+
+	
+}

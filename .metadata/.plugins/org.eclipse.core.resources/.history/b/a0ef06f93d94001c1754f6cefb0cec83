@@ -1,0 +1,33 @@
+package br.com.devdojo.examgenerator.security.service;
+
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Service;
+
+import br.com.devdojo.examgenerator.persistence.model.ApplicationUser;
+import br.com.devdojo.examgenerator.persistence.repository.ApplicationUserRepository;
+
+@Service
+public class CustomUserDetailsService implements UserDetailsService{
+	
+	private final ApplicationUserRepository applicationUserRepository;
+	
+	@Autowired
+	public CustomUserDetailsService(ApplicationUserRepository applicationUserRepository) {
+		this.applicationUserRepository = applicationUserRepository;
+	}
+
+	@Override
+	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	public ApplicationUser loadApplicationUserByUsername(String username) {
+		return Optional.ofNullable(applicationUserRepository.findByUsername(username))
+	}
+}
