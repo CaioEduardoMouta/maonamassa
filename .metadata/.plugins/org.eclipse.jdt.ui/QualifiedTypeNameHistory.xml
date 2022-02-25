@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="org.springframework.http.HttpStatus"/>
-    <fullyQualifiedTypeName name="javax.persistence.MappedSuperclass"/>
-    <fullyQualifiedTypeName name="java.io.Serializable"/>
-    <fullyQualifiedTypeName name="javax.persistence.Id"/>
     <fullyQualifiedTypeName name="javax.persistence.GeneratedValue"/>
     <fullyQualifiedTypeName name="javax.persistence.GenerationType"/>
     <fullyQualifiedTypeName name="java.util.Set"/>
@@ -60,4 +56,8 @@
     <fullyQualifiedTypeName name="br.com.devdojo.examgenerator.security.filter.JWTAuthenticationFilter"/>
     <fullyQualifiedTypeName name="br.com.devdojo.examgenerator.security.filter.JWTAuthorizationFilter"/>
     <fullyQualifiedTypeName name="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"/>
+    <fullyQualifiedTypeName name="jdk.jfr.Name"/>
+    <fullyQualifiedTypeName name="java.io.Serializable"/>
+    <fullyQualifiedTypeName name="javax.inject.Named"/>
+    <fullyQualifiedTypeName name="javax.faces.view.ViewScoped"/>
 </qualifiedTypeNameHistroy>
