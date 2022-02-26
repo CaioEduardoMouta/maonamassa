@@ -3,8 +3,20 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 		xmlns:h="http://xmlns.jpc.org/jsf/html"
 		xmlns:ui="http://xmlns.jpc.org/jsf/facelets"
+		xmlns:p="http://primefaces.org/ui"			
 		xmlns:f="http://xmlns.jpc.org/jsf/core">
-	<h:form>
-		<h:commandButton actionListener="#{indexBean.login}" value="Login"/>
-	</h:form>
+<h:head>
+
+</h:head>
+<h:body>
+	<div class="header">
+	
+	</div>
+	<div id="content">
+		<p:messages id="messages" showDetail="false" autoUpdate="true" closable="true"/>
+		<ui:insert name="content">
+		
+		</ui:insert>
+	</div>
+</h:body>
 </html>

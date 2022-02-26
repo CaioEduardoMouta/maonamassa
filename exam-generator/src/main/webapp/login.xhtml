@@ -1,0 +1,14 @@
+<ui:compositio xmlns="http://www.w3.org/1999/xhtml"
+		xmlns:h="http://xmlns.jpc.org/jsf/html"
+		xmlns:ui="http://xmlns.jpc.org/jsf/facelets"
+		xmlns:p="http://primefaces.org/ui">
+	<ui:define name="content">
+		<h:form>
+			<h:panelGrid columns="1">
+				<h:inputText value="#{loginBean.username}" required="true" requiredMessage="Username required"/>
+				<h:inputText value="#{loginBean.username}" required="true" requiredMessage="Username required"/>
+				<h:commandButton value="Login" action="#{loginBean.login}"/>
+			</h:panelGrid>
+		</h:form>
+	</ui:define>
+</ui:compositio>
