@@ -4,7 +4,7 @@
 		xmlns:h="http://xmlns.jpc.org/jsf/html"
 		xmlns:ui="http://xmlns.jpc.org/jsf/facelets"
 		xmlns:f="http://xmlns.jpc.org/jsf/core">
-	<f:view>
-		<h:outputLabel value="#{indexBean.message}"/>
-	</f:view>
+	<h:form>
+		<h:commandButton actionListener="#{indexBean.login}" value="Login"/>
+	</h:form>
 </html>

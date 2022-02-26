@@ -9,6 +9,7 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
+import static org.springframework.http.HttpMethod.POST;
 
 import br.com.devdojo.examgenerator.persistence.model.Token;
 
@@ -24,8 +25,10 @@ public class LoginDAO implements Serializable {
 	
 	public Token loginReturningToken(String username, String password) {
 		String loginJson = "{\"username\":" +addQuotes(username) + ",\"password\":" + addQuotes(password) + "}";
-		ResponseEntity<Token> tokenExchange = restTemplate.exchange(BASE_URL,POST, new HttpEntity<>(loginJson, createJsonHeader()), Token.class);
-		//return null;
+		ResponseEntity<Token> tokenExchange = restTemplate
+				.exchange(BASE_URL,POST, new HttpEntity<>(loginJson, createJsonHeader()), Token.class);
+		
+		return tokenExchange.getBody();
 	}
 	@SuppressWarnings("StringBufferReplaceableByString")
 	private String addQuotes(String value) {
