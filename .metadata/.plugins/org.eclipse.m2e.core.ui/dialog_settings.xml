@@ -6,6 +6,11 @@
 	</section>
 	<section name="MavenProjectWizardLocationPage">
 		<list key="location">
+			<item value="C:\Users\Acer\Documents\MeusProjetos"/>
+			<item value="C:\Users\Acer\Documents\MeusProjetos\"/>
+			<item value="C:\Users\Acer\Documents\MeusProjetos\maonamassa\examgenerator-jsf"/>
+			<item value="C:\Users\Acer\Documents\MeusProjetos\maonamassa\examgenerator-jsf\src\main\resources"/>
+			<item value="C:\Users\Acer\Documents\MeusProjetos\maonamassa\exam-generator\src\main\java\br\com\devdojo\examgenerator\config"/>
 			<item value="C:\Users\Acer\Documents\MeusProjetos\maonamassa\exam-generator-jsf"/>
 		</list>
 		<list key="projectNameTemplate">
@@ -49,14 +54,20 @@
 	</section>
 	<section name="MavenProjectWizardArtifactPage">
 		<list key="groupId">
-			<item value="exam-generator"/>
-			<item value="exam-generators"/>
+			<item value="exam-generator-jsf"/>
+			<item value="MaoNaMassaFront-End"/>
+			<item value="DEMO"/>
+			<item value="examgenerator-jsf"/>
 		</list>
 		<list key="name">
-			<item value="exam-generator"/>
+			<item value="exam-generator-jsf"/>
+			<item value="MaoNaMassaFront-End"/>
+			<item value="examgenerator-jsf"/>
 		</list>
 		<list key="artifactId">
-			<item value="exam-generator"/>
+			<item value="exam-generator-jsf"/>
+			<item value="MaoNaMassaFront-End"/>
+			<item value="examgenerator-jsf"/>
 			<item value="exam"/>
 		</list>
 		<list key="projectNameTemplate">
@@ -101,5 +112,11 @@
 			<item value="[groupId].[artifactId]-[version]"/>
 			<item value="[name]"/>
 		</list>
+	</section>
+	<section name="org.eclipse.m2e.core.ui.internal.dialogs.MavenRepositorySearchDialog">
+		<item key="width" value="480"/>
+		<item key="height" value="529"/>
+		<item key="x" value="682"/>
+		<item key="y" value="0"/>
 	</section>
 </section>
